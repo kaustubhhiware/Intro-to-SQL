@@ -15,7 +15,7 @@ $ mysql -u {rollnumber} -h localhost -p # login mysql</pre>
 
 * If you want to use a new database :
 
- `mysql> create {new_database_name}`
+ `mysql> create database {new_database_name}`
 
 <pre style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">mysql> show databases; # shows existing databases
 +--------------------+
