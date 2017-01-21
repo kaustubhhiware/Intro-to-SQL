@@ -18,8 +18,8 @@ Run virtualbox with - `$ virtualbox` on your terminal.
 Once inside virtualbox, browse to `File > Import new appliance`. Search for mininet ovf . Some settings need to be altered first.
 
 * `Virtualbox > File > Preferences > Network > host-only network >` select vboxnet0
-* `.. Network > Adapter 1 >` Attached to NAT (selected by default).
-* `.. Network > Adapter 2 > Attached to > host-only adapter name` > vboxnet0
+* `Select mininet > Settings > Network > Adapter 1 >` Attached to NAT (selected by default).
+* `Select mininet > Settings > Network > Adapter 2 > Attached to > host-only adapter name` > vboxnet0
 
 These 3 settings must be changed in *this order* only.
 
