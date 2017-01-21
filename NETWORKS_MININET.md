@@ -4,24 +4,31 @@
 * Install virtualbox - `sudo apt-get install virtualbox`
 
  Alternatively, search for `mininet_networks` on DC++. Username - `temporary_username` . Contains both required files. Downloading Mininet VM may consume upto 98% of your CPU, so personal advice not to download on Windows (because Windows is shit.)
+ 
+ Installing virtualbox from .deb file - 
+ <pre style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">sudo dpkg -i virtualbox-5.1_5.1.14-112924-Ubuntu-xenial_amd64.deb
+ sudo apt-get install -f</pre>
+ ` 
 
 [Mininet on GitHub](https://github.com/mininet/mininet/wiki/FAQ).
 
 # Syntax and Execution
 
 Run virtualbox with - `$ virtualbox` on your terminal.
-Once inside virtualbox, browse to `File > Execution`. Search for mininet. Some settings need to be altered first.
+Once inside virtualbox, browse to `File > Import new appliance`. Search for mininet ovf . Some settings need to be altered first.
 
-* `Virtualbox > File > Network > host-only network >` select vboxnet0
+* `Virtualbox > File > Preferences > Network > host-only network >` select vboxnet0
 * `.. Network > Adapter 1 >` Attached to NAT (selected by default).
 * `.. Network > Adapter 2 > Attached to > host-only adapter name` > vboxnet0
+
+These 3 settings must be changed in *this order* only.
 
 Once your mininet OS is installed, a terminal fires up. Login credentials - user : mininet, password : mininet
 
 <pre style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">$ sudo mn # start mininet # this is in virtualbox
 mininet > nodes # show available nodes
 mininet > dump # dump node info
-mininet > ifconfig # available physical interfaces connected to device
+mininet > h1 ifconfig -a # available physical interfaces connected to device
 mininet > # switch through multiple terminals (tty) with Alt + left/right arrow keys
 mininet > h1 ping h2 # ping from one host to other
 mininet > h1 cmd # to execute command cmd on host1
